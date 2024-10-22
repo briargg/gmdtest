@@ -2,194 +2,224 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  }
-  
-  body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f7f7f7;
-    animation: fadeIn 1s ease-in;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f7f6;
+    color: #333;
+}
+
+/* Contenedor principal */
+.container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     height: 100vh;
-  }
-  
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-  
-  header {
-    width: 100%;
-    background-color: transparent;
-    margin-bottom: 50px;
+}
+
+/* Barra superior (Header) */
+header .top-bar {
+    background: linear-gradient(90deg, #32a852, #58e877);
     display: flex;
-    justify-content: center;
-  }
-  
-  .modern-nav {
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px);
-    border-radius: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    padding: 10px 30px;
-  }
-  
-  .modern-nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-  }
-  
-  .modern-nav ul li {
-    margin: 0 15px;
-  }
-  
-  .modern-nav ul li a {
-    color: #333;
-    font-size: 18px;
-    text-decoration: none;
-    padding: 10px 20px;
-    transition: all 0.3s ease;
-    position: relative;
-  }
-  
-  .modern-nav ul li a:hover {
-    color: #28a745;
-  }
-  
-  .modern-nav ul li a::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 3px;
-    background-color: #28a745;
-    left: 0;
-    bottom: -5px;
-    transform: scaleX(0);
-    transition: transform 0.3s ease;
-  }
-  
-  .modern-nav ul li a:hover::after {
-    transform: scaleX(1);
-  }
-  
-  .content {
-    text-align: center;
-  }
-  
-  .banner {
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(20px);
-    padding: 10px 20px;
-    border-radius: 20px;
-    display: inline-block;
-    opacity: 0;
-    animation: slideDown 1s ease-in-out forwards;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-  }
-  
-  @keyframes slideDown {
-    from {
-      transform: translateY(-20px);
-      opacity: 0;
-    }
-    to {
-      transform: translateY(0);
-      opacity: 1;
-    }
-  }
-  
-  .banner .new-feature {
-    font-size: 14px;
+    justify-content: space-between;
+    padding: 20px;
+    color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+header .logo {
+    font-size: 28px;
     font-weight: bold;
-    color: white;
-    padding: 5px 10px;
-    border-radius: 10px;
-    background: linear-gradient(to right, #d4fc79, #96e6a1);
-  }
-  
-  h1 {
-    font-size: 36px;
-    font-weight: 700;
-    margin: 30px 0;
-    color: #333;
-  }
-  
-  .signup-form {
-    display: inline-block;
-    text-align: left;
-    opacity: 0;
-    animation: fadeInUp 1.5s ease-in-out forwards;
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(20px);
-    padding: 40px;
-    border-radius: 20px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-  }
-  
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  .signup-form input {
-    width: 300px;
-    padding: 15px;
-    margin: 10px 0;
-    border-radius: 8px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+header .user-actions {
+    display: flex;
+    align-items: center;
+}
+
+header .notifications {
+    margin-right: 20px;
+    position: relative;
+}
+
+header .notifications i {
+    margin-left: 10px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+header .logout-btn {
+    background-color: #ffffff;
+    color: #32a852;
     border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
     font-size: 16px;
-    background: rgba(255, 255, 255, 0.5);
-    box-shadow: inset 0 4px 10px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-  }
-  
-  .signup-form input:focus {
-    background: rgba(255, 255, 255, 0.7);
-    outline: none;
-    box-shadow: inset 0 4px 10px rgba(0, 0, 0, 0.2);
-  }
-  
-  .signup-form button {
-    width: 100%;
-    padding: 15px;
+    transition: background-color 0.3s ease;
+}
+
+header .logout-btn:hover {
     background-color: #28a745;
     color: white;
-    font-size: 16px;
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    margin-top: 10px;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-  }
-  
-  .signup-form button:hover {
-    background-color: #218838;
-    transform: translateY(-2px);
-    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
-  }
-  @keyframes shake {
-    0% { transform: translateX(0); }
-    25% { transform: translateX(-5px); }
-    50% { transform: translateX(5px); }
-    75% { transform: translateX(-5px); }
-    100% { transform: translateX(0); }
-  }
-  
-  .shake {
-    animation: shake 0.5s;
-  }
-  
+}
+
+header .logout-btn i {
+    margin-left: 10px;
+}
+
+.header .user-actions i {
+    margin-left: 20px;
+    font-size: 30px;
+}
+
+/* Contenido principal */
+.main-content {
+    display: flex;
+    flex: 1;
+    background-color: #f4f7f6;
+}
+
+/* Sidebar (Menú lateral) */
+.sidebar {
+    width: 220px;
+    background-color: #2e2e2e;
+    padding: 30px 0;
+    color: white;
+    transition: width 0.4s ease;
+    box-shadow: 4px 0 12px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 20px;
+}
+
+.sidebar ul li a {
+    display: block;
+    color: #ddd;
+    padding: 15px 30px;
+    text-decoration: none;
+    font-size: 18px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.sidebar ul li a i {
+    margin-right: 10px;
+}
+
+.sidebar ul li a:hover {
+    background-color: #58e877;
+    color: #2e2e2e;
+}
+
+/* Iconos modernos en el sidebar */
+.sidebar ul li a i {
+    font-size: 22px;
+}
+
+/* Contenido dinámico */
+.content-section {
+    display: none;
+    padding: 40px;
+    background-color: #ffffff;
+    width: 100%;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+}
+
+.content-section.active {
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.content-section h1 {
+    font-size: 32px;
+    color: #32a852;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+.content-section p {
+    font-size: 18px;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Transición de Sidebar para hacerlo interactivo */
+.sidebar:hover {
+    width: 250px;
+}
+
+.sidebar:hover ul li a {
+    padding: 15px 40px;
+}
+
+/* Transiciones para elementos del menú y el contenido */
+.sidebar ul li a,
+header .top-bar {
+    transition: all 0.4s ease;
+}
+
+/* Estilos para la sección de Órdenes de Trabajo */
+.content-section {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.orders-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.orders-table th, .orders-table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.orders-table thead {
+    background-color: #32a852;
+    color: white;
+    font-weight: bold;
+}
+
+.orders-table td .pdf-link {
+    color: #32a852;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.orders-table td .pdf-link:hover {
+    text-decoration: underline;
+}
+
+/* Estilo para el título */
+.content-section h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #333;
+}
