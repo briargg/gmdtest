@@ -1,0 +1,195 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f7f7;
+    animation: fadeIn 1s ease-in;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  header {
+    width: 100%;
+    background-color: transparent;
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .modern-nav {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 10px 30px;
+  }
+  
+  .modern-nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .modern-nav ul li {
+    margin: 0 15px;
+  }
+  
+  .modern-nav ul li a {
+    color: #333;
+    font-size: 18px;
+    text-decoration: none;
+    padding: 10px 20px;
+    transition: all 0.3s ease;
+    position: relative;
+  }
+  
+  .modern-nav ul li a:hover {
+    color: #28a745;
+  }
+  
+  .modern-nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background-color: #28a745;
+    left: 0;
+    bottom: -5px;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+  }
+  
+  .modern-nav ul li a:hover::after {
+    transform: scaleX(1);
+  }
+  
+  .content {
+    text-align: center;
+  }
+  
+  .banner {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(20px);
+    padding: 10px 20px;
+    border-radius: 20px;
+    display: inline-block;
+    opacity: 0;
+    animation: slideDown 1s ease-in-out forwards;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  @keyframes slideDown {
+    from {
+      transform: translateY(-20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  .banner .new-feature {
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 10px;
+    background: linear-gradient(to right, #d4fc79, #96e6a1);
+  }
+  
+  h1 {
+    font-size: 36px;
+    font-weight: 700;
+    margin: 30px 0;
+    color: #333;
+  }
+  
+  .signup-form {
+    display: inline-block;
+    text-align: left;
+    opacity: 0;
+    animation: fadeInUp 1.5s ease-in-out forwards;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(20px);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .signup-form input {
+    width: 300px;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: none;
+    font-size: 16px;
+    background: rgba(255, 255, 255, 0.5);
+    box-shadow: inset 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .signup-form input:focus {
+    background: rgba(255, 255, 255, 0.7);
+    outline: none;
+    box-shadow: inset 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .signup-form button {
+    width: 100%;
+    padding: 15px;
+    background-color: #28a745;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    margin-top: 10px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .signup-form button:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+  }
+  @keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+  }
+  
+  .shake {
+    animation: shake 0.5s;
+  }
+  
